@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트10 - BOM 객체</title>
+</head>
+<body>
+    <!-- window, screen, location, history, navigator -->
+    <button id="btn1" onclick="opener1()">네이버로 가고싶으면 클릭!</button>
+
+    <script>
+        document.write("<h2>Window 객체↓↓↓</h2>")
+        for(var key in window){
+            document.write("<br>"+key+" : "+window[key]);
+        }
+        document.write("<hr>");
+        document.write("<h2>screen 객체↓↓↓</h2>")
+        for(var key in screen){
+            document.write("<br>"+key+" : "+screen[key]);
+        }
+        document.write("<hr>");
+        document.write("<h2>location 객체↓↓↓</h2>")
+        for(var key in location){
+            document.write("<br>"+key+" : "+location[key]);
+        }
+        document.write("<hr>");
+        document.write("<h2>history 객체↓↓↓</h2>")
+        for(var key in history){
+            document.write("<br>"+key+" : "+history[key]);
+        }
+        document.write("<hr>");
+        document.write("<h2>navigator 객체↓↓↓</h2>")
+        for(var key in navigator){
+            document.write("<br>"+key+" : "+navigator[key]);
+        }
+        var win1, win2, win3;
+        function opener1(){ //window.open("url", "참이름 또는 타겟", "옵션리스트");
+        var win1 = window.open("https://www.naver.com","win1","width=400, height=300, top=100, left=300, scrollbar=no, menubar=no, status=no, toolbar=no, location=no");
+        }
+        /* 자바스크립트만으로 웹앱을 만들고자 할 경우
+        document.getElementById("btn1").addEventListener("Click", function(){
+            opener1();
+        });  */
+
+        var opener2 = function(){
+            var sel = document.getElementById("sel1");
+            if(sel.value!=""){
+                //location.href = sel.value; - 현재 창에
+                win2 = window.open(sel.value,"win1","width=400, height=300, top=100, left=300, scrollbars=no, menubar=no, status=no, toolbar=no, location=no"); //새창에
+            }
+        }
+
+        var opener3 = function(){
+            //location.href = "javascript1.html";   //현재 창에
+            win3 = window.open("javascript11.html")
+        }
+    </script>    
+</body>
+</html>
