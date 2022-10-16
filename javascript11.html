@@ -7,13 +7,24 @@
     <title>자바스크립트 팝업창</title>
 </head>
 <body>
-    <h2>팝업창</h2>
+    <h2>팝업 창</h2>
     <div class="content">내용</div>
     <button type="button" onclick="cls()">닫기</button>
+    <button type="button" onclick="prt()">인쇄</button>
+    <button type="button" onclick="full()">전체화면으로</button>
     <script>
-        function cls(){
-            window.close();
-        }
-    </script>    
+    function cls(){
+        window.close();
+    }
+    function prt(){
+        window.print();
+    }
+    function full(){
+        var w = screen.availWidth;
+        var h = screen.availHeight;
+        window.innerWidth = w;
+        window.innerHeight = h;
+    }
+    </script>
 </body>
 </html>
